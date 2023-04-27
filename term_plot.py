@@ -1,5 +1,5 @@
 
-# v1.06 / neurograph for terminal use
+# v1.07 / neurograph for terminal use
 # needs `termplotlib`
 # please install w/ `pip install termplotlib`
 
@@ -10,8 +10,13 @@ import re
 import termplotlib as tpl
 import numpy as np
 
+
 def print_line(length):
     print("=" * length)
+
+""" def print_line():
+    terminal_width = shutil.get_terminal_size().columns
+    print("=" * terminal_width) """
 
 def main():
     log_dir = "logs/"
@@ -60,44 +65,6 @@ def main():
 
     fig.show()
     print()
-
-if __name__ == "__main__":
-    main()
-
-import os
-import glob
-import re
-import termplotlib as tpl
-import numpy as np
-
-# requires termplotlib;
-# $ pip install termplotlib
-
-# main v1.0 // working
-def main():
-    log_dir = "logs/"
-    log_files = glob.glob(log_dir + "*.txt")
-    latest_log = max(log_files, key=os.path.getctime)
-    
-    with open(latest_log, "r") as file:
-        lines = file.readlines()
-
-    x = []
-    y = []
-
-    for line in lines:
-        if line.startswith("["):
-            match = re.search(r'\[(\d+)\s\|\s[\d.]+\]\sloss=[\d.]+\savg=([\d.]+)', line)
-            if match:
-                x.append(int(match.group(1)))
-                y.append(float(match.group(2)))
-
-    fig = tpl.figure()
-    fig.plot(x, y, width=60, height=20)
-    print("x-axis: Iterations")
-    print("y-axis: Avg")
-    fig.show()
-
 
 if __name__ == "__main__":
     main()
