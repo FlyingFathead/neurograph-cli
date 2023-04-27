@@ -15,7 +15,7 @@ requirements:
 3. ???
 4. yes
 
-Can be run in an auto-update mode like so in i.e. bash;
+Can be run in an auto-update mode like so in i.e. bash by adding this to `~/.bash_aliases`;
 
 ```
 function termplotview() {
