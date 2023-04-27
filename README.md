@@ -3,6 +3,8 @@ Neural network graph plotter for TensorFlow training data (i.e. GPT-2)
 
 `term_plot.py` - terminal window version
 
+![screenshot](sample.png)
+
 Tested on Windows Git Bash & Ubuntu Linux 22.04LTS
 
 requirements:
