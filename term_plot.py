@@ -1,5 +1,4 @@
-
-# v1.07 / neurograph for terminal use
+# v1.08 / neurograph for terminal use
 # needs `termplotlib`
 # please install w/ `pip install termplotlib`
 
@@ -9,14 +8,12 @@ import glob
 import re
 import termplotlib as tpl
 import numpy as np
+import io
 
 
 def print_line(length):
-    print("=" * length)
+    return "=" * length
 
-""" def print_line():
-    terminal_width = shutil.get_terminal_size().columns
-    print("=" * terminal_width) """
 
 def main():
     log_dir = "logs/"
@@ -41,19 +38,24 @@ def main():
                 x.append(int(match.group(1)))
                 y.append(float(match.group(2)))
 
-    print_line(60)
-    print(f"{date_str}")
-    print_line(60)
-    print()
+    output = io.StringIO()
+
+    output.write(print_line(60) + "\n")
+    output.write(f"{date_str}\n")
+    output.write(print_line(60) + "\n")
+    output.write("\n")
 
     first_x = x[0]
     first_y = y[0]
     last_x = x[-1]
     last_y = y[-1]
 
-    print(f"{first_x:<7}{'':>42}{last_x:>7}")
-    print(f"{'='*7}{'':>42}{'='*7}")
-    print(f"avg={first_y:<6.2f}{'':>39}avg={last_y:.2f}")
+    last_x_str = f"{last_x:>9}"
+    last_y_str = f"avg={last_y:5.2f}"
+
+    output.write(f"{first_x:<9}{'':>{60 - 9 - len(last_x_str)}}{last_x_str}\n")
+    output.write(f"{'='*10}{'':>{60 - 9 - len('=') * 9}}{'='*10}\n")
+    output.write(f"avg={first_y:<5.2f}{'':>{60 - len(' avg=0.00') - len(last_y_str)}}{last_y_str}\n")
 
     fig = tpl.figure()
     fig.plot(x, y, width=60, height=20)
@@ -61,10 +63,17 @@ def main():
     # Center the x-axis and y-axis labels
     label = "x-axis: Iterations | y-axis: Avg"
     padding = (60 - len(label)) // 2
-    print(f"{'':<{padding}}{label}")
+    output.write(f"{'':<{padding}}{label}\n")
 
-    fig.show()
-    print()
+    output.write(fig.get_string() + "\n")
+    output.write("\n")
+
+    # Print the whole output at once
+    print(output.getvalue())
+
+    # Close the StringIO object
+    output.close()
+
 
 if __name__ == "__main__":
     main()
