@@ -29,11 +29,11 @@ function termplotview() {
 
 # TL;DR (in reverse)
 
-The script parses the training data and plots a graph using termplotlib. The x-axis represents the number of iterations, and the y-axis represents the average loss.
+The script parses the training data and plots a graph using `termplotlib`. The x-axis represents the number of iterations, and the y-axis represents the average loss.
 
 Neurograph might be an useful tool for quickly visualizing the training progress of neural networks without having to switch to a separate visualization tool or library. It is also lightweight and does not require a graphical user interface.
 
-Using a lightweight library like termplotlib for plotting in the terminal window can save system resources compared to using a full-fledged plotting library like Matplotlib. Additionally, having the graph output in the terminal window can be convenient for users who prefer to work in the command line interface or need to run their programs on headless servers without a graphical user interface.
+Using a lightweight library like `termplotlib` for plotting in the terminal window can save system resources compared to using a full-fledged plotting library like `matplotlib`. Additionally, having the graph output in the terminal window can be convenient for users who prefer to work in the command line interface or need to run their programs on headless servers without a graphical user interface.
 
 # TODO
 
