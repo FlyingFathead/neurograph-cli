@@ -1,7 +1,7 @@
 # Neurograph
 Neural network graph plotter for TensorFlow training data (i.e. GPT-2)
 
-`term_plot.py` - terminal window version
+`term_plot.py` - terminal window version / very nice for remote/headless neural model training with tensorflow
 
 ![screenshot](sample.png)
 
