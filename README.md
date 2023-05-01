@@ -27,7 +27,7 @@ function termplotview() {
 }
 ```
 
-# TL;DR (in reverse)
+# What's this for?
 
 The script parses the training data and plots a graph using `termplotlib`. The x-axis represents the number of iterations, and the y-axis represents the average loss.
 
