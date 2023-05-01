@@ -10,7 +10,7 @@ Tested on Windows Git Bash & Ubuntu Linux 22.04LTS
 requirements:
 
 `pip install termplotlib`
-(termplotlib might have other dependencies)
+(termplotlib might have other dependencies such as `gnuplot`, that needs to be installed separately)
 
 1. assumes you have your readouts under `logs/`, fetches the latest .txt from that directory
 2. prints out a neat graph into your terminal window
