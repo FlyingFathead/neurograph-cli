@@ -40,3 +40,7 @@ Using a lightweight library like `termplotlib` for plotting in the terminal wind
 - Sanitize the code for the matplolib+Tk version w/ web backend and include it as a part of the `neurograph` overall
 - Better data point visibility esp. for per-iteration value scatters (this is not feasible to do in a terminal due to the number of data points involved; is crucial for an overview of model integrity)
 
+## About
+
+See the `neurograph-framework` for a `matplotlib` & `tkinter`-based GUI entropy graph plotter: [github.com/FlyingFathead/neurograph-framework/](https://github.com/FlyingFathead/neurograph-framework/)
+My other projects are at: [github.com/FlyingFathead/](https://github.com/FlyingFathead/)
