@@ -43,4 +43,5 @@ Using a lightweight library like `termplotlib` for plotting in the terminal wind
 ## About
 
 See the `neurograph-framework` for a `matplotlib` & `tkinter`-based GUI entropy graph plotter: [github.com/FlyingFathead/neurograph-framework/](https://github.com/FlyingFathead/neurograph-framework/)
+
 My other projects are at: [github.com/FlyingFathead/](https://github.com/FlyingFathead/)
