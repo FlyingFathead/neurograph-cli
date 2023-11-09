@@ -35,6 +35,10 @@ Neurograph might be an useful tool for quickly visualizing the training progress
 
 Using a lightweight library like `termplotlib` for plotting in the terminal window can save system resources compared to using a full-fledged plotting library like `matplotlib`. Additionally, having the graph output in the terminal window can be convenient for users who prefer to work in the command line interface or need to run their programs on headless servers without a graphical user interface.
 
+# Other
+
+- `latest_log_analysis.py` provides a crude dump of latest available logfile data with rudimentary values to work on (total iterations, avg loss, median loss, min & max loss, std.dev loss, top n losses, bottom n losses, first & last iteration values)
+
 # TODO
 
 - Sanitize the code for the matplolib+Tk version w/ web backend and include it as a part of the `neurograph` overall
